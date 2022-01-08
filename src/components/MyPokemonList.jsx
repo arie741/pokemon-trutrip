@@ -5,8 +5,8 @@ function MyPokemonList() {
   const myPokemonList = useSelector((state) => state.myPokemonList.value);
 
   return (
-    <div>
-      {myPokemonList.length != 0 ? (
+    <div className="container">
+      {myPokemonList.length !== 0 ? (
         myPokemonList.map((item, index) => (
           <PokemonItem
             key={index}

@@ -10,7 +10,7 @@ function MyPokemonDetail() {
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let myPokemonList = useSelector((state) => state.myPokemonList.value);
-  let myPokemon = myPokemonList.find((item) => item.id == id);
+  let myPokemon = myPokemonList.find((item) => item.id === id);
   let [apiPokemon, setApiPokemon] = useState();
 
   useEffect(() => {
@@ -23,15 +23,15 @@ function MyPokemonDetail() {
   }
 
   return (
-    <div>
-      <h3>{myPokemon.name}</h3>
-      <div>
-        <b>{apiPokemon?.name}</b>
+    <div className="container pt-4">
+      <h1 className="text-capitalize">{myPokemon.name}</h1>
+      <div className="mb-3 text-capitalize">
+      {apiPokemon?.name}
       </div>
       <button className="btn btn-danger" onClick={() => releaseHandle()}>
         Release
       </button>
-      <h4>Types</h4>
+      <h4 className="mt-5">Types</h4>
       <ul>
         {apiPokemon?.types.map((item, index) => (
           <li key={index}>{item.type.name} </li>

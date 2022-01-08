@@ -5,7 +5,7 @@ import { parseId } from "../functions/helperFunctions";
 function PokemonList() {
   const pokemonList = useSelector((state) => state.pokemonList.value);
   return (
-    <div>
+    <div className="container">
       {pokemonList.map((item, index) => (
         <PokemonItem
           key={index}

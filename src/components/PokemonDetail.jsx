@@ -25,7 +25,7 @@ function PokemonDetail() {
 
   useEffect(() => {
     if (isCatching) {
-      let catchtimer = setTimeout(() => {
+      setTimeout(() => {
         let catchValue = catchPokemon();
         if(catchValue){
           dispatch(success(id))
@@ -39,14 +39,14 @@ function PokemonDetail() {
   }, [isCatching])
 
   return (
-    <div>
+    <div className="container pt-4">
       {pokemon && (
         <div>
-          <h3>{pokemon.name}</h3>
+          <h1 className="text-capitalize mb-3">{pokemon.name}</h1>
           <button className="btn btn-success" onClick={() => handleCatch()}>
             Catch
           </button>
-          <h4>Types</h4>
+          <h4 className="mt-5">Types</h4>
           <ul>
             {pokemon.types.map((item, index) => (
               <li key={index}>{item.type.name} </li>
