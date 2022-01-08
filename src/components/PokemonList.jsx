@@ -6,7 +6,6 @@ function PokemonList() {
   const pokemonList = useSelector((state) => state.pokemonList.value);
   return (
     <div className="container">
-      <div data-testid="test">List</div>
       {pokemonList.map((item, index) => (
         <PokemonItem
           key={index}
